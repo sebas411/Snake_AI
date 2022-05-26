@@ -1,14 +1,17 @@
-import itertools
 import json
 
-sqs = [''.join(s) for s in list(itertools.product(*[['0','1']] * 4))]
+borders = []
+
+for i in range(16):
+	comb = str(bin(i))[2:].zfill(4)
+	borders.append(comb)
 widths = ['0','1','NA']
 heights = ['2','3','NA']
 
 states = {}
 for i in widths:
 	for j in heights:
-		for k in sqs:
+		for k in borders:
 			states[str((i,j,k))] = [0,0,0,0]
 
 with open("qvalues.json", "w") as f:

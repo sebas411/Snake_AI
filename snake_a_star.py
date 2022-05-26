@@ -16,7 +16,7 @@ BLOCK_SIZE = 10
 DIS_WIDTH = 600
 DIS_HEIGHT = 400
 
-FRAMESPEED = 30
+FRAMESPEED = 200
 
 def DrawFood(foodx, foody):
     pygame.draw.rect(dis, RED, [foodx, foody, BLOCK_SIZE, BLOCK_SIZE])   
@@ -126,18 +126,16 @@ def GameLoop():
     dead = False
     reason = None
 
-    path = a_star((foodx, foody), snake_list)
+    path = a_star((foodx, foody), snake_list)[1:]
 
     while not dead:
         if not path:
-            path = a_star((foodx, foody), snake_list)
-        print(path[-1], (foodx, foody))
+            path = a_star((foodx, foody), snake_list)[1:]
         nextpos = path.pop(0)
         action = "down"
         if nextpos[0] > x1: action = "right"
         elif nextpos[0] < x1: action = "left"
         elif nextpos[1] < y1: action = "up"
-
         if action == "left":
             x1_change = -BLOCK_SIZE
             y1_change = 0
