@@ -18,7 +18,7 @@ DIS_WIDTH = 600
 DIS_HEIGHT = 400
 
 QVALUES_N = 50
-FRAMESPEED = 3000
+FRAMESPEED = 30
 
 def DrawFood(foodx, foody):
     pygame.draw.rect(dis, RED, [foodx, foody, BLOCK_SIZE, BLOCK_SIZE])   

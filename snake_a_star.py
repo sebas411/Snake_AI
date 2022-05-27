@@ -16,7 +16,7 @@ BLOCK_SIZE = 10
 DIS_WIDTH = 600
 DIS_HEIGHT = 400
 
-FRAMESPEED = 200
+FRAMESPEED = 30
 
 def DrawFood(foodx, foody):
     pygame.draw.rect(dis, RED, [foodx, foody, BLOCK_SIZE, BLOCK_SIZE])   

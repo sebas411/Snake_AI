@@ -34,12 +34,12 @@ class AI(object):
     def Reset(self):
         self.history = []
 
-    def LoadQvalues(self, path="qvalues.json"):
+    def LoadQvalues(self, path="qtable.json"):
         with open(path, "r") as f:
             qvalues = json.load(f)
         return qvalues
 
-    def SaveQvalues(self, path="qvalues.json"):
+    def SaveQvalues(self, path="qtable.json"):
         with open(path, "w") as f:
             json.dump(self.qvalues, f)
             

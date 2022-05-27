@@ -14,5 +14,5 @@ for i in widths:
 		for k in borders:
 			states[str((i,j,k))] = [0,0,0,0]
 
-with open("qvalues.json", "w") as f:
+with open("qtable.json", "w") as f:
 	json.dump(states, f)
